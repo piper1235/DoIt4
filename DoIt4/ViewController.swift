@@ -30,6 +30,21 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         return cell
     }
     
+    func makeTasks() -> [Task] {
+        let task1 = Task()
+        task1.name = "Walk the dog"
+        task1.important = false
+        
+        let task2 = Task()
+        task2.name = "Buy cheese"
+        task2.important = true
+        
+        let task3 = Task()
+        task3.name = "Mow the lawn"
+        task3.important = false
+        
+        return[task1, task2, task3]
+    }
     
 }
 
