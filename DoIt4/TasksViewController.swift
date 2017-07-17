@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TasksViewController.swift
 //  DoIt4
 //
 //  Created by Tony on 7/16/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+class TasksViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -35,7 +35,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         if task.important {
             cell.textLabel?.text = "❗️\(task.name)"
         } else {
-           cell.textLabel?.text = task.name
+            cell.textLabel?.text = task.name
         }
         
         return cell
@@ -60,5 +60,12 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     @IBAction func plusTapped(_ sender: Any) {
         performSegue(withIdentifier: "addSegue", sender: nil)
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! CreateTaskViewController
+        nextVC.PreviousVC = self
+        
+    }
+    
+    
 }
 
