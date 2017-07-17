@@ -62,7 +62,7 @@ class TasksViewController: UIViewController,UITableViewDelegate, UITableViewData
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextVC = segue.destination as! CreateTaskViewController
-        nextVC.PreviousVC = self
+        nextVC.previousVC = self
         
     }
     
